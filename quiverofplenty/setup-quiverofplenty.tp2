@@ -1,0 +1,16 @@
+BACKUP ~quiverofplenty/Backup~ // So WeiDU can uninstall
+AUTHOR ~Dracoqwerty~
+README ~quiverofplenty/Readme.txt~ // Shows readme file
+VERSION ~1.0~
+LANGUAGE ~English~ ~english~ ~quiverofplenty/lang/english/quiverofplenty.tra~
+BEGIN @1
+	INCLUDE ~scspsionadj/lib/functions.tph~   // Borrowed from Argent77 for dynamic animation slot search code
+	INCLUDE ~scspsionadj/lib/handle_charsets.tpa~   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+	ACTION_IF (GAME_IS ~bgee iwdee bg2ee eet~) THEN BEGIN	//Checks for the correct game type
+		COPY "quiverofplenty/itm/d8quiv01.itm" "override"
+      WRITE_LONG NAME1 RESOLVE_STR_REF (@2)
+			WRITE_LONG NAME2 RESOLVE_STR_REF (@2)
+      WRITE_LONG UNIDENTIFIED_DESC RESOLVE_STR_REF (@3)
+			WRITE_LONG IDENTIFIED_DESC RESOLVE_STR_REF (@3)                                                         
+END
+  
